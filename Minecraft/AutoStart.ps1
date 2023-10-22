@@ -1,5 +1,5 @@
 #MinecraftServer Start
-sleep(100)
+sleep(200)
 
 
 Start-Process "C:\Minecraft\MinecraftStart.url" -WindowStyle ([System.Diagnostics.ProcessWindowStyle]::Maximized)
