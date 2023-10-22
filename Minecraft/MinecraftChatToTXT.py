@@ -28,8 +28,6 @@ while Loop == 0:
         # This function will extract the text from the image 
         text = pytesseract.image_to_string(img) 
 
-        # Displaying the extracted text 
-        print(text)
         try:
             if text[0] == "<":
                 OldMSG = open("C:\Minecraft\MinecraftDiscordLog.json", "r")
