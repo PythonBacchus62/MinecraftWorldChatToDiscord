@@ -72,6 +72,20 @@ while Loop == 0:
                     file2 = open("C:\Minecraft\MinecraftDiscordLog.json", "w")
                     file2.write(text)
                     file2.close()
+                    
+            if text[0] == "#":
+                OldMSG = open("C:\Minecraft\MinecraftDiscordLog.json", "r")
+                OldMSG = OldMSG.read()
+                if text == OldMSG:
+                    pass
+                else:
+                    print(text)
+                    file1 = open("C:\Minecraft\MinecraftDiscord.json", "a")
+                    file1.write(text)
+                    file1.close()
+                    file2 = open("C:\Minecraft\MinecraftDiscordLog.json", "w")
+                    file2.write(text)
+                    file2.close()
         except:
             pass
     
