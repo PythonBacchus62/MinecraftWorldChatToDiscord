@@ -109,14 +109,13 @@ async def change_status():
                         user = await client.fetch_user(DiscordID)
                         embed.set_author(name=f'{ChatText[0]} aka. {user}' , url="", icon_url=user.avatar.url)
                     else:
-                        print("https")
                         embed.set_author(name=ChatText[0], url="", icon_url="https://th.bing.com/th/id/R.85e8705eea0e57f2af8dca28960daec8?rik=ZUbKvewxi915Mg&pid=ImgRaw&r=0")
                     embed.add_field(name="", value=ChatText[1], inline=False)
 
                     await channel.send(embed=embed)
                     
                 if ChatMSG[1] == "+":
-                    ChatText = ChatMSG[3:]
+                    ChatText = ChatMSG[3:].replace("\n", "")
                     if not f'{ChatText}' in users:
                         users[f'{ChatText}'] = {}
                         users[f'{ChatText}']['DiscordID'] = 0
@@ -133,7 +132,7 @@ async def change_status():
                     await channel.send(embed=embed)
                    
                 if ChatMSG[1] == "-":
-                    ChatText = ChatMSG[3:]
+                    ChatText = ChatMSG[3:].replace("\n", "")
                     if not f'{ChatText}' in users:
                         users[f'{ChatText}'] = {}
                         users[f'{ChatText}']['DiscordID'] = 0
@@ -157,7 +156,7 @@ async def change_status():
                         users[f'{ChatText[0]}']['DiscordID'] = 0
                         users[f'{ChatText[0]}']['DiscordToken'] = 0
                         users[f'{ChatText[0]}']['MSG'] = 0
-                    users[f'{ChatText[0]}']['DiscordToken'] = ChatText[1]
+                    users[f'{ChatText[0]}']['DiscordToken'] = int(ChatText[1].replace("\n", ""))
                 with open('C:\Minecraft\DiscordUser.json', 'w+') as f:
                     json.dump(users, f)
             except:

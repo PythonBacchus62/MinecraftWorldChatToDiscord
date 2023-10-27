@@ -1,0 +1,51 @@
+{
+    "format_version": "1.19.10",
+    "minecraft:item": {
+        "description": {
+            "identifier": "mine:gettoken",
+            "category": "GetToken"
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:foil": false,
+            "minecraft:use_duration": 50000,
+            "minecraft:icon": {
+              "texture": "nether_star"
+            },
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.items" // Can be any creative category
+              },
+            "minecraft:display_name": { "value": "GetToken" },
+            "minecraft:on_use": { "on_use": { "event": "NewToken" } },
+            "minecraft:cooldown": { "category": "GetToken", "duration": 6.00  },
+            "minecraft:render_offsets":{
+              "main_hand":{
+                "first_person":{
+                  "scale":[0.0,0.0,0.0]
+                },
+                "third_person":{
+                  "scale":[0.0,0.0,0.0]
+                }
+              },
+              "off_hand":{
+                "first_person":{
+                  "scale":[0.0,0.0,0.0]
+                },
+                "third_person":{
+                  "scale":[0.0,0.0,0.0]
+                }
+              }
+            }
+        },
+        "events": {
+            "NewToken": {
+              "shoot":{
+                "launch_power" : 1,
+                "angle_offset" : "query.cardinal_facing",
+                "projectile": "mine:gettoken"
+              }
+          }
+        }
+    }
+}

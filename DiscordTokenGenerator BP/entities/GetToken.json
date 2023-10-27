@@ -1,0 +1,51 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mine:gettoken",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"GetToken"
+
+				]
+			},
+			"animations": {
+				"GetToken": "controller.animation.GetToken"
+
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"GetToken"
+				]
+			},
+			"minecraft:health": {
+        "value": 3
+      },
+           "minecraft:nameable" : {
+                "alwaysShow" : true,
+                "allowNameTagRenaming" : true
+   },
+ "minecraft:damage_sensor": [
+                {
+                "cause": "all",
+                "deals_damage": false
+                }
+               ],
+	  "minecraft:scale": {
+	    "value": 0.125
+	  },
+      "minecraft:collision_box": {
+        "width": 0.0,
+        "height": 0.0
+      },
+      "minecraft:physics": {
+				"has_grvity": false
+			}
+        }
+    }
+}

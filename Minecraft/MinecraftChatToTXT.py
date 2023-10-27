@@ -9,7 +9,7 @@ Chat = 0
 
 while Loop == 0:
     Chat = 1
-    if Chat == 1:
+    if Chat != 0:
         image_demo = pyscreenshot.grab(bbox=(0, 885, 1895, 935))
         image_demo.save("C:\Minecraft\Chat.png")
 
@@ -27,6 +27,7 @@ while Loop == 0:
         # Passing the image object to image_to_string() function 
         # This function will extract the text from the image 
         text = pytesseract.image_to_string(img) 
+        img.close()
 
         try:
             if text[0] == "<":
@@ -42,7 +43,8 @@ while Loop == 0:
                     file2 = open("C:\Minecraft\MinecraftDiscordLog.json", "w")
                     file2.write(text)
                     file2.close()
-
+            else:
+                pass
 
             if text[1] == "+":
                 OldMSG = open("C:\Minecraft\MinecraftDiscordLog.json", "r")
@@ -57,7 +59,8 @@ while Loop == 0:
                     file2 = open("C:\Minecraft\MinecraftDiscordLog.json", "w")
                     file2.write(text)
                     file2.close()
-
+            else:
+                pass
 
             if text[1] == "-":
                 OldMSG = open("C:\Minecraft\MinecraftDiscordLog.json", "r")
@@ -72,6 +75,8 @@ while Loop == 0:
                     file2 = open("C:\Minecraft\MinecraftDiscordLog.json", "w")
                     file2.write(text)
                     file2.close()
+            else:
+                pass
                     
             if text[0] == "#":
                 OldMSG = open("C:\Minecraft\MinecraftDiscordLog.json", "r")

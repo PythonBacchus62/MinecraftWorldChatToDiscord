@@ -2,16 +2,16 @@
    "format_version" : 2,
    "header" : {
       "description" : "§bL̠͇͜e͚͇͚g̢̞̪e̝̙̺n̢̠͍d̙̘̫§f-§bTeam",
-      "name" : "§2MinecraftChat",
-      "uuid" : "2654b100-c34b-4dec-45e0-3993748c7a8e",
+      "name" : "§2DiscordTokenGenerator",
+      "uuid" : "2654b100-c34b-4dec-44e0-3993748c8a8e",
       "min_engine_version": [1, 14, 0],
       "version" : [ 1, 13, 1 ]
    },
    "modules" : [
       {
          "description" : "§bL̠͇͜e͚͇͚g̢̞̪e̝̙̺n̢̠͍d̙̘̫§f-§bTeam",
-         "type" : "resources",
-         "uuid" : "a79fe822-ade8-4075-9082-f645618a46c3",
+         "type" : "data",
+         "uuid" : "a79fe822-ade8-4076-9085-f643618a46c2",
          "version" : [ 1, 13, 1 ]
       }
    ]
