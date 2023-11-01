@@ -1,5 +1,5 @@
-multiplayer.player.joined=§f[§a+§f]§e%s
-multiplayer.player.joined.realms=§f[§a+§f]§e%s 
+multiplayer.player.joined=§a+ §e%s
+multiplayer.player.joined.realms=§a+ §e%s 
 
-multiplayer.player.left=§f[§4-§f]§e%s 
-multiplayer.player.left.realms=§f[§4-§f]§e%s
+multiplayer.player.left=§4- §e%s 
+multiplayer.player.left.realms=§4- §e%s

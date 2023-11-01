@@ -1,27 +1,32 @@
 #MinecraftServer Start
-sleep(200)
+timeout(200)
 
 
-Start-Process "C:\Minecraft\MinecraftStart.url" -WindowStyle ([System.Diagnostics.ProcessWindowStyle]::Maximized)
-sleep(25)
-Start-Process "C:\Minecraft\AutoStart.py"
-sleep(5)
+
+Start-Process -FilePath "MinecraftStart.url" -WorkingDirectory "C:\Minecraft" 
+timeout(35)
+Start-Process -FilePath "AutoStart.py" -WorkingDirectory "C:\Minecraft"
+timeout(6)
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.SendKeys]::SendWait("%n{ENTER}")
-sleep(5)
+timeout(20)
 [System.Windows.Forms.SendKeys]::SendWait("%n{up}")
 [System.Windows.Forms.SendKeys]::SendWait("%n{up}")
 [System.Windows.Forms.SendKeys]::SendWait("%n{up}")
 [System.Windows.Forms.SendKeys]::SendWait("%n{up}")
-sleep(1)
+timeout(1)
 [System.Windows.Forms.SendKeys]::SendWait("%n{down}")
 [System.Windows.Forms.SendKeys]::SendWait("%n{down}")
-sleep(1)
+timeout(1)
 [System.Windows.Forms.SendKeys]::SendWait("%n{ENTER}")
-sleep(30)
-[System.Windows.Forms.SendKeys]::SendWait("%n{t}")
-sleep(5)
-Start-Process "C:\Minecraft\DiscordBot.py"
-sleep(1)
-Start-Process "C:\Minecraft\MinecraftChatToTXT.py"
-
+timeout(30)
+[System.Windows.Forms.SendKeys]::SendWait("%nt")
+timeout(3)
+[System.Windows.Forms.SendKeys]::SendWait("%n{/}setmaxplayers 99")
+[System.Windows.Forms.SendKeys]::SendWait("%n{ENTER}")
+timeout(5)
+[System.Windows.Forms.SendKeys]::SendWait("%nt")
+timeout(5)
+Start-Process "C:\Minecraft\DiscordBot.py" -WindowStyle Hidden
+timeout(1)
+Start-Process "C:\Minecraft\MinecraftChatToTXT2.py" -WindowStyle Hidden

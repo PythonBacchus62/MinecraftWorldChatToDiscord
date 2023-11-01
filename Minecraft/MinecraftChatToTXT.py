@@ -5,20 +5,17 @@ import pyautogui
 from time import sleep
 
 Loop = 0
-Chat = 0
 
 while Loop == 0:
-    Chat = 1
-    if Chat != 0:
-        image_demo = pyscreenshot.grab(bbox=(0, 885, 1895, 935))
-        image_demo.save("C:\Minecraft\Chat.png")
+        image = pyscreenshot.grab(bbox=(0, 885, 1895, 935))
+        image.save("C:\Minecraft\Chat.png")
 
 
         path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-        image_path = "C:\Minecraft\Chat.png"
+        image = "C:\Minecraft\Chat.png"
 
         # Opening the image & storing it in an image object 
-        img = Image.open(image_path) 
+        img = Image.open(image) 
 
         # Providing the tesseract executable 
         # location to pytesseract library 
@@ -30,6 +27,7 @@ while Loop == 0:
         img.close()
 
         try:
+           
             if text[0] == "<":
                 OldMSG = open("C:\Minecraft\MinecraftDiscordLog.json", "r")
                 OldMSG = OldMSG.read()
@@ -46,7 +44,7 @@ while Loop == 0:
             else:
                 pass
 
-            if text[1] == "+":
+            if text[0] == "+":
                 OldMSG = open("C:\Minecraft\MinecraftDiscordLog.json", "r")
                 OldMSG = OldMSG.read()
                 if text == OldMSG:
@@ -62,7 +60,7 @@ while Loop == 0:
             else:
                 pass
 
-            if text[1] == "-":
+            if text[0] == "-" or "~" or "»":
                 OldMSG = open("C:\Minecraft\MinecraftDiscordLog.json", "r")
                 OldMSG = OldMSG.read()
                 if text == OldMSG:
